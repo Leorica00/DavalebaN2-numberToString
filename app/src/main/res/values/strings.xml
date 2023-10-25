@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">DavalebaN2</string>
+    <string name="number_to_string">რიცხვის დაგაყვანა</string>
+    <string name="enter_string">შეიყვანეთ რიცხვი</string>
+</resources>
