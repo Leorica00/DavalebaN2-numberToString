@@ -1,7 +1,6 @@
 package com.example.davaleban2
 
 import android.os.Bundle
-import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -17,10 +16,6 @@ class MainActivity : AppCompatActivity() {
         val numberButton = findViewById<Button>(R.id.numberButton)
 
         numberButton.setOnClickListener {
-            val imm = getSystemService(
-                INPUT_METHOD_SERVICE
-            ) as InputMethodManager
-            imm.hideSoftInputFromWindow(findViewById<EditText?>(R.id.numberEditText).windowToken, 0)
             val inputText = findViewById<EditText?>(R.id.numberEditText).text.toString()
             numberText.text = numberToString(inputText)
         }
