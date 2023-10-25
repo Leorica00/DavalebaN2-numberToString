@@ -68,10 +68,12 @@ class MainActivity : AppCompatActivity() {
 
                 // calculating tens and ones part for more than a hundred numbers.
                 // In this case if variable dozen is 0 then it should just return <20 part f.e. - 107 "ას-შვიდი", since there is no tens part here.
-                val finalDozen: String? = if (dozen == 0) {
-                    map[hundredNumbReminder % 20]
-                } else {
-                    "${map[dozen]}$dozenAddText"
+                val finalDozen: String = if (dozen == 0 && dozenReminder != 0) {
+                    " ${map[hundredNumbReminder % 20]}"
+                } else if (dozenReminder != 0 || dozen != 0){
+                    " ${map[dozen]}$dozenAddText"
+                }else {
+                    "ი"
                 }
 
                 // calculating the whole number for more than 100 numbers. there are 3 different cases: case of 100, case of 200..700
@@ -98,7 +100,7 @@ class MainActivity : AppCompatActivity() {
 
                 return when {
                     numb < 20 -> map[numb]
-                    numb < 100 -> "$finalDozen"
+                    numb < 100 -> finalDozen
                     numb < 1000 -> hundredNumbAddText
                     else -> "ათასი"
 
