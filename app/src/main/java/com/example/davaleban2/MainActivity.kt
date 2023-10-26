@@ -69,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                 // calculating tens and ones part for more than a hundred numbers.
                 // In this case if variable dozen is 0 then it should just return <20 part f.e. - 107 "ას-შვიდი", since there is no tens part here.
                 val finalDozen: String = if (dozen == 0 && dozenReminder != 0) {
-                    " ${map[hundredNumbReminder % 20]}"
+                    " ${map[dozenReminder]}"
                 } else if (dozenReminder != 0 || dozen != 0){
                     " ${map[dozen]}$dozenAddText"
                 }else {
